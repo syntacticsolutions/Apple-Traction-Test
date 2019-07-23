@@ -23,6 +23,8 @@ node app
 
 0. Set the environment variables in `.env.example` and rename to `.env`
 
+0. Make sure that you set a user who has INSERT, UPDATE, SELECT, DROP, and CREATE permissionsn
+
 0. If you are running MySQL 8 or greater add these lines to your `my.cnf` file.
 
 ```bash
@@ -34,12 +36,18 @@ default-authentication-plugin=mysql_native_password
 
 0. `OK` will be printed to the screen if the migrations were successful, otherwise just reload the page
 
-## Test Application
+## Use Application
 
 0. Navigate to `localhost:9000`
 
 0. Enter a URL in the input box and click submit
 
-0. A link will then be rendered that is a shortened URL. Clicking on that link will take you to the long version of your URL.
+0. A link will then be rendered that is a shortened URL. Clicking on that link will take you to the long version of your URL. You can also just type the link into the browser search bar and it will still work.
 
 Note: If you enter the same URL twice you will be given the shortened version of the first URL entered since the API tests if the URL has already been persisted to the database.
+
+## Run API unit tests
+
+```
+npm run test:backend
+```
