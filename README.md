@@ -11,6 +11,12 @@ npm install
 node app
 ```
 
+## Initialize database
+
+0. Navigate to `localhost:9000/api/init`
+
+0. `OK` will be printed to the screen if the migrations were successful, otherwise just reload the page
+
 ## Test Application
 
 0. Navigate to `localhost:9000`
@@ -19,7 +25,7 @@ node app
 
 0. A link will then be rendered that is a shortened URL. Clicking on that link will take you to the long version of your URL.
 
-0. Note: If you enter the same URL twice you will be given the shortened version of the first URL entered since the API tests if the URL has already been persisted to the backend.
+0. Note: If you enter the same URL twice you will be given the shortened version of the first URL entered since the API tests if the URL has already been persisted to the database.
 
 ## Explanation
 

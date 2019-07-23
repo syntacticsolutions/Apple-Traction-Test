@@ -14,15 +14,15 @@ router.post('/create_url_map', (req, res) => {
           .insert({ link: req.body.url })
       }
     })
-    .then(([ id ]) => res.status(201).send(id))
-    .catch(() => res.status(500).send('server error'))
+    .then(id => res.status(201).send(id))
+    .catch((err) => res.status(500).send(err))
 })
 
 router.get('/get_url/:index', (req, res) => {
   return knex('urls')
     .where({ id: req.params.index })
     .then(([ row ]) => {
-      if (row) return res.status(200).send(row)
+      if (row) return res.status(200).send(row.link)
       else return res.status(404).send('Not Found')
     })
     .catch(() => res.status(500).send('Server error'))
