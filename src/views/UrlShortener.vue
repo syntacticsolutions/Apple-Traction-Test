@@ -27,7 +27,7 @@ export default {
     shortenUrl () {
       console.log('poop')
       this.$axios.post(
-        `${this.$config.backendHost}/api/create_url_map`,
+        `${this.$config.backendHost}/api/create_url`,
         { url: this.url }
       )
         .then(res => {

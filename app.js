@@ -16,3 +16,5 @@ app.use(express.static('dist'))
 app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, './dist/index.html')))
 
 app.listen(port, () => console.log(`Traction app listening on port ${port}!`))
+
+module.exports = app

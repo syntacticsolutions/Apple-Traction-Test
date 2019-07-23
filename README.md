@@ -1,8 +1,14 @@
 # traction-test
 
 ## Project setup
+
+0. Install Dependencies
 ```
 npm install
+```
+0. Build frontend Assets
+```
+npm run build
 ```
 
 ## Run server

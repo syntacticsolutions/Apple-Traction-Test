@@ -56,9 +56,10 @@ exports.init = (req, res) => {
 exports.deleteDatabase = (req, res) => {
   return knex.raw('DROP DATABASE If EXISTS ' + db)
     .then(() => {
-      return knex.raw('CREATE DATABASE ' + db)
+      return knex.raw('CREATE DATABASE IF NOT EXISTS ' + db)
     })
     .then(() => {
+      knex.destroy(() => knex.initialize())
       if (!res) return
       res.status(200).send('DB Deleted and recreated')
     })
